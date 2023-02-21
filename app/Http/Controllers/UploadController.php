@@ -10,6 +10,7 @@ class UploadController extends Controller
 {
     public function upload(Request $request)
     {
+        ini_set('max_execution_time', 420);
         // Get the file from the request
         $file = $request->file('file');
 
@@ -29,7 +30,7 @@ class UploadController extends Controller
             }
         }
 
-        // Redirect back to the upload form
-        return redirect()->back();
+        // Redirect back to the upload form with a success message
+        return redirect()->back()->with('success', 'Codes uploaded successfully.');
     }
 }

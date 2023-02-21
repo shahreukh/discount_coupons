@@ -17,6 +17,11 @@
         </style>
     </head>
     <body class="antialiased" style="margin: 40px!important; background-color:cadetblue">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <div>
             <h1 style="margin-bottom: 40px!important;color:wheat;font:bold;text-align:center">Upload CSV File</h1>
         </div>
